@@ -21,10 +21,8 @@
                 border-bottom: solid 1px #ccc;
                 overflow: auto;
                 padding: 1em;
-                margin: 0;
             }
             header > div {
-                border-top: 1px solid #f0f0f0; /* hack */
                 max-width: 800px;
                 margin: 0 auto;
             }
@@ -39,7 +37,15 @@
                 #logo { margin: 0 1em; }
             }
             h1 {
-                margin-bottom: 0;
+                margin: 0;
+                padding-top: 0.5em;
+            }
+            header a, header a:visited {
+                color: #000;
+                text-decoration: none;
+            }
+            header a:hover {
+                color: #A4C639;
             }
             #tagline {
                 margin: 0;
@@ -48,8 +54,11 @@
             h2 {
                 clear: both;
             }
-            a, a:visited {
+            a, a:visited, a:hover {
                 color: #A4C639;
+            }
+            a:hover {
+                color: #c8dd88;
             }
 
             footer {
@@ -62,8 +71,10 @@
     <body>
         <header>
             <div>
-                <div id="logo"></div>
-                <h1>github.com/android</h1>
+                <a href="https://github.com/android">
+                    <div id="logo"></div>
+                    <h1>github.com/android</h1>
+                </a>
                 <p id="tagline">The same Android you know and love, on GitHub.</p>
             </div>
         </header>
