@@ -2,26 +2,48 @@
 Modified from Android_robot.svg
 Google CC-BY-3.0 (http://creativecommons.org/licenses/by/3.0), via Wikimedia Commons
 -->
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-147 -68 294 343">
-  <g fill="#a4c639">
-    <use stroke-width="14.4" xlink:href="#body" stroke="#FFF"/>
-    <use xlink:href="#a" transform="scale(-1,1)"/>
-    <g id="a" stroke="#FFF" stroke-width="7.2">
-      <rect id="antenna" rx="6.5" transform="rotate(29)" height="86" width="13" y="-86" x="14"/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-147 -138 294 413">
+  <defs>
+    <clipPath id="lidClip">
+      <rect height="35" width="182" y="-50" x="-91"/>
+    </clipPath>
+    <clipPath id="headClip">
+      <rect height="80" width="220" y="-17" x="-106"/>
+    </clipPath>
+    <rect id="appendage" rx="24" height="133" width="48" />
+  </defs>
 
-      <!-- arms and legs -->
-      <rect id="arm" rx="24" height="133" width="48" y="41" x="-143"/>
-      <use y="97" x="85" xlink:href="#arm"/>
+  <g fill="#a4c639">
+    <use stroke-width="14.4" xlink:href="#lid" stroke="#FFF"/>
+    <use stroke-width="14.4" xlink:href="#body" stroke="#FFF"/>
+
+    <!-- arms and legs -->
+    <g stroke="#FFF" stroke-width="7.2">
+      <use id="arm" xlink:href="#appendage" y="41" x="-143"/>
+      <use id="leg" y="138" x="-58" xlink:href="#appendage"/>
+      <use xlink:href="#arm" transform="scale(-1,1)"/>
+      <use xlink:href="#leg" transform="scale(-1,1)"/>
     </g>
-    <g>
-      <ellipse id="head" cy="41" rx="91" ry="84" transform="rotate(0 100 100)"/>
-      <rect id="body" rx="22" height="182" width="182" y="20" x="-91"/>
+
+    <!-- body and bottom half of head -->
+    <g id="body">
+      <ellipse cy="41" rx="91" ry="84" clip-path="url(#headClip)" />
+      <rect rx="22" height="182" width="182" y="20" x="-91"/>
     </g>
+
+    <!-- top half of head and antennae -->
+    <g id="lid" transform="rotate(-30 -85 -15)">
+      <ellipse cy="41" rx="91" ry="84" clip-path="url(#lidClip)" />
+      <rect id="antenna" rx="6.5" transform="rotate(29)" height="43" width="10" y="-86" x="14"/>
+      <use xlink:href="#antenna" transform="scale(-1,1)"/>
+    </g>
+
   </g>
 
+  <!-- eyes and mouth -->
   <g stroke="#FFF" stroke-width="7.2" fill="#FFF">
     <path id="mouth" d="m-95 44.5h190"/>
-    <circle id="lefteye" cx="-42" r="4"/>
-    <circle id="righteye" cx="42" r="4"/>
+    <circle id="eye" cx="-42" r="4"/>
+    <use xlink:href="#eye" transform="scale(-1,1)"/>
   </g>
 </svg>
